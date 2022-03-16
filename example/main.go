@@ -3,8 +3,8 @@ package main
 import (
 	"github.com/gogf/gf-jwt/example/api"
 	"github.com/gogf/gf-jwt/example/service"
-	"github.com/gogf/gf/frame/g"
-	"github.com/gogf/gf/net/ghttp"
+	"github.com/gogf/gf/v2/frame/g"
+	"github.com/gogf/gf/v2/net/ghttp"
 )
 
 // authHook is the HOOK function implements JWT logistics.
@@ -25,6 +25,6 @@ func main() {
 		g.Middleware(service.Middleware.CORS, middlewareAuth)
 		g.ALL("/info", api.Work.Info)
 	})
-	s.SetPort(8111)
+	s.SetPort(8000)
 	s.Run()
 }
